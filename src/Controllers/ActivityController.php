@@ -19,14 +19,14 @@ class ActivityController extends Controller
 
     private function handleData(Request $request)
     {
-        $this->validate($request, [
-            'action'    => 'required|string',
-            'user_id'   => 'sometimes|numeric',
-            'log_type'  => 'sometimes|string',
-            'table'     => 'sometimes|string',
-            'from_date' => 'sometimes|date_format:Y-m-d',
-            'to_date'   => 'sometimes|date_format:Y-m-d'
-        ]);
+        // $this->validate($request, [
+        //     'action'    => 'required|string',
+        //     'user_id'   => 'sometimes|numeric',
+        //     'log_type'  => 'sometimes|string',
+        //     'table'     => 'sometimes|string',
+        //     'from_date' => 'sometimes|date_format:Y-m-d',
+        //     'to_date'   => 'sometimes|date_format:Y-m-d'
+        // ]);
 
         $data = Log::with('user')->orderBy('id', 'desc');
         if ($request->has('user_id')) {
@@ -49,11 +49,11 @@ class ActivityController extends Controller
 
     private function handleCurrentData(Request $request)
     {
-        $this->validate($request, [
-            'table'  => 'required|string',
-            'id'     => 'required',
-            'log_id' => 'required|numeric'
-        ]);
+        // $this->validate($request, [
+        //     'table'  => 'required|string',
+        //     'id'     => 'required',
+        //     'log_id' => 'required|numeric'
+        // ]);
 
         $table = request('table');
         $id = request('id');
@@ -72,9 +72,9 @@ class ActivityController extends Controller
 
     private function handleUserAutocomplete(Request $request)
     {
-        $this->validate($request, [
-            'user' => 'required|string|max:50'
-        ]);
+        // $this->validate($request, [
+        //     'user' => 'required|string|max:50'
+        // ]);
 
         $user = request('user');
         return $this->userInstance::select('id', 'name', 'email')

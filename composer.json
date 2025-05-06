@@ -1,6 +1,6 @@
 {
-  "name": "haruncpi/laravel-user-activity",
-  "description": "Monitor user activity easily!",
+  "name": "haunv/laravel-user-activity",
+  "description": "Monitor user activity easily! for laravel 12",
   "license": "cc-by-4.0",
   "keywords": [
     "laravel",
